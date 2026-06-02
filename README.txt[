@@ -1,0 +1,60 @@
+# Videos API
+
+A REST API for managing videos, built with Node.js, Fastify, and PostgreSQL.
+
+## 🚀 Technologies
+
+- [Node.js](https://nodejs.org/)
+- [Fastify](https://fastify.dev/)
+- [PostgreSQL](https://www.postgresql.org/) via [Neon](https://neon.tech/)
+- [postgres.js](https://github.com/porsager/postgres)
+
+## ⚙️ Setup
+
+1. Clone the repository
+```bash
+git clone https://github.com/seu-usuario/videos-api
+cd videos-api
+```
+
+2. Install dependencies
+```bash
+npm install
+```
+
+3. Create a `.env` file in the root directory
+```env
+DATABASE_URL=your_neon_database_url
+```
+
+4. Create the database table
+```bash
+node create-table.js
+```
+
+5. Start the server
+```bash
+node server.js
+```
+
+Server will be running at `http://localhost:3333`
+
+## 📡 Endpoints
+
+| Method | Route | Description |
+|--------|-------|-------------|
+| GET | `/videos` | List all videos |
+| GET | `/videos?search=query` | Search videos by title |
+| POST | `/videos` | Create a new video |
+| PUT | `/videos/:id` | Update a video |
+| DELETE | `/videos/:id` | Delete a video |
+
+## 📝 Request Body (POST/PUT)
+
+```json
+{
+  "title": "Video title",
+  "description": "Video description",
+  "duration": 180
+}
+```
